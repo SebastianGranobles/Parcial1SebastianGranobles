@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investigación - Facultad de Ingeniería</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="Styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Grupos de Investigación de la USC</h1>
+
+        <h2>Registrar Docente Investigador</h2>
+        <form id="formDocente">
+            <input type="text" id="nombreDocente" placeholder="Nombre del Docente" required>
+            <input type="text" id="formacion" placeholder="Formación Académica" required>
+            <input type="text" id="horario" placeholder="Horario de Atención" required>
+            <select id="grupoDocente">
+                <option value="COMBA I+D">COMBA I+D</option>
+                <option value="GIEIAM">GIEIAM</option>
+            </select>
+            <button type="button" onclick="limpiarFormulario('formDocente')">Limpiar</button>
+        </form>
+
+        <h2>Vincular Estudiante a Semillero</h2>
+        <form id="formEstudiante">
+            <input type="text" id="nombreEstudiante" placeholder="Nombre del Estudiante" required>
+            <input type="text" id="codigoEstudiante" placeholder="Código" required>
+            <input type="text" id="carrera" placeholder="Carrera" required>
+            <select id="semilleroEstudiante">
+                <option value="Semillero Comba">Semillero Comba</option>
+                <option value="Semillero Informa">Semillero Informa</option>
+            </select>
+            <button type="button" onclick="limpiarFormulario('formEstudiante')">Limpiar</button>
+        </form>
+
+        <h2>Agregar Actividad a Semillero</h2>
+        <form id="formActividad">
+            <input type="text" id="tituloActividad" placeholder="Título de la Actividad" required>
+            <input type="datetime-local" id="fechaHora" required>
+            <input type="number" id="limite" placeholder="Límite de Asistentes" required>
+            <textarea id="resumen" placeholder="Resumen de la actividad" required></textarea>
+            <button type="button" onclick="limpiarFormulario('formActividad')">Limpiar</button>
+        </form>
+
+        <button onclick="generarPDF()">Generar PDF</button>
+        <p id="errorMensaje" style="color: red;"></p>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
